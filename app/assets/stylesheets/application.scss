@@ -1,0 +1,10 @@
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import 'articles';
+
+body{
+  background-image: url("/images/bike2.jpg");
+  background-size: cover;
+}
+
+

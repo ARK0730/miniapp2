@@ -1,0 +1,20 @@
+<div class="container">
+<div class="row">
+<% @articles.each do |article| %>
+  <%= link_to article do %>
+    <div class="col-md-4 margin-top-3per article-block">
+      <%= image_tag 'bike.jpg', class: 'img-responsive padding-top15' %>
+        <div class="padding-bottom-15">
+          <p class="title"><%= article.title %></p>
+          <span>
+            <%= article.created_at.strftime("%Y年%m月%d日") %>
+          </span>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
+  <div class="row">
+   
+  </div>
+</div>
