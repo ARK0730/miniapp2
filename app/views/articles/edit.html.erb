@@ -1,6 +1,8 @@
 <div class="container">
   <div class="col-md-12 article-block">
-    <%= image_tag 'bike.jpg', class: 'article-image padding-top15' %>
+    <% if @article.image_id.present?%>
+    <%= image_tag attachment_url(@article, :image), class: 'article-image padding-top15' %>
+    <% end %>
     <div class="padding-bottom-15">
       <%= render 'form', article: @article %>
     </div>

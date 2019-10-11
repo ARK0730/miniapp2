@@ -10,12 +10,9 @@
   </head>
 
   <body>
-  <a class="text-title" href="/">Cyclist Beautiful scenery</a>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-    <div class="botn">
-      <%= link_to '新規作成', new_article_path, class: 'margin-top-3per btn btn-success'%>
-    </div>
+
+    <%= render 'layouts/header' %>
+
     <%= yield %>
   </body>
 </html>

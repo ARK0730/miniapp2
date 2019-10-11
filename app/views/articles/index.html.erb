@@ -3,7 +3,11 @@
 <% @articles.each do |article| %>
   <%= link_to article do %>
     <div class="col-md-4 margin-top-3per article-block">
-      <%= image_tag 'bike.jpg', class: 'img-responsive padding-top15' %>
+    <% if article.image_id.present?%>
+      <%= image_tag attachment_url(article, :image), class: 'img-responsive padding-top15 article-list-image' %>
+      <% else %>
+      <%= image_tag 'no-image.png', class: 'img-responsive padding-top15 article-list-image' %>
+      <% end %>
         <div class="padding-bottom-15">
           <p class="title"><%= article.title %></p>
           <span>
@@ -14,7 +18,5 @@
     <% end %>
   <% end %>
   </div>
-  <div class="row">
-   
   </div>
 </div>

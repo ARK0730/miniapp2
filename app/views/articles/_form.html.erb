@@ -1,4 +1,14 @@
 <%= form_for article do |f| %>
+  <% if @article.image_id.present?%>
+    <div class="form-group padding-top15">
+    </div>
+  <% else %>
+    <div class="form-group padding-top15">
+      <%= image_tag 'no-image.png',class: 'article-image' %>
+  </div>
+  <% end %>
+  <%= f.attachment_field :image %>
+
   <div class="form-group padding-top15">
     <%= f.label :title, '場所' %>
     <%= f.text_field :title, class: 'form-control' %>

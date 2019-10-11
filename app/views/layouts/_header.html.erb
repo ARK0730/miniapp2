@@ -1,0 +1,14 @@
+<div class="text-center">
+  <a href="/">Cyclist Beautiful scenery</a>
+</div>
+  <div class= "botan">
+    <% if user_signed_in? %>
+      <%= link_to '新規投稿', new_article_path %>
+      &nbsp;
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+      <% else %>
+      <%= link_to 'ユーザー登録', new_user_registration_path %>
+      &nbsp;
+      <%= link_to 'ログイン', new_user_session_path %>
+    <% end %>
+  </div>

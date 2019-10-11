@@ -1,6 +1,8 @@
 <div class="container">
   <div class="col-md-12 article-block">
-    <%= image_tag 'bike.jpg', class: 'article-image padding-top15' %>
+    <% if @article.image_id.present?%>
+    <%= image_tag attachment_url(@article, :image), class: 'article-image padding-top15' %>
+    <% end %>
     <h1><%= @article.title %></h1>
     <div class="padding-bottom-15">
       <%=simple_format @article.body %>
@@ -10,7 +12,9 @@
       </span>
       </p>
     </div>
+    <% if user_signed_in? && current_user.id == @article.user_id %>
     <%= link_to '編集', edit_article_path(@article), class:'btn btn-success', style: 'margin-bottom: 10px; margin-right: 10px' %>
     <%= link_to '削除', article_path(@article), method: :delete, data: {confirm: '削除してもよろしいですか？'}, class:'btn btn-danger', style: 'margin-bottom: 10px' %>
+    <% end %>
   </div>
 </div>
